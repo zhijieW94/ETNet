@@ -165,9 +165,9 @@ This file (`test.yaml`) has the following options:
 - `data`: the directory of the input images. Specifically, `dir_content` and `dir_style` are used to indicate the pathes of content and style images respectively.
 - `dir_out`: the output directory for evaluation results. It can be `image/output/test` for multiple synthesis images.
 
-For the model with three different levels, after setting `test.yaml` as shown above, we can start the testing by running `test.py`, such as
+For the model with three different levels, after setting `test.yaml` as shown above, we can start the testing by running `stylize.py`, such as
 ```
-python test.py
+python stylize.py
 ```
 
 ## Citation
