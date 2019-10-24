@@ -1,0 +1,34 @@
+GPU_ID: [0,1,2,3]  # Multiple GPUs can be selected for training
+batch_size: 4
+lr: 0.0001
+lr_decay: 0.00005
+epoch: 1
+iteration: 100000
+img_size: [256,256,3] # Size of input image clipping
+
+Incremental: 2  # Layer of current training
+layers_num: 3  # Count of layers in current network
+
+weight:  # Weight of losses
+  content: 1.0
+  style:  8.0
+
+dir_checkpoint: [[0, models/layer1/checkpoints],[1, models/layer2/checkpoints]] # Directory of pretrained models: [[layer_0, model_0],[layer_1, model_1],...]
+vgg_weights: models/vgg_normalised.t7
+
+data: # Directory of input images
+  dir_content: image/input/content
+  dir_style: image/input/style
+
+dir_out: image/output/train # Root directory for saving results
+output: # Subdirectories for saving results
+  dir_log: logs
+  dir_config: configs
+  dir_sample: samples
+  dir_checkpoint: checkpoints
+
+freq_print: 200 # Frequence of printing synthesis images
+freq_save: 200 # Frequence of saving models
+freq_log: 20 # Frequence of saving log files
+
+

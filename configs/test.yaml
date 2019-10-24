@@ -1,0 +1,13 @@
+GPU_ID: 7
+layers_num: 3 # Count of layers of network
+
+checkpoint_dir: [[0, models/layer1/checkpoints],[1, models/layer2/checkpoints],[2, models/layer3/checkpoints]] # Directory of pretrained models: [[layer_0, model_0],[layer_1, model_1],...]
+vgg_weights: models/vgg_normalised.t7
+
+data: # Directory of input images
+  dir_content: image/input/content
+  dir_style: image/input/style
+
+dir_out: image/output/test # Root directory for saving results
+output: # Subdirectories for saving results
+  dir_result: results
