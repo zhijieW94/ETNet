@@ -46,7 +46,7 @@ If you have any questions, please feel free to contact Zhijie Wu (wzj.micker@gma
 - pyyaml
 
 ## Download
-- The training of our style transfer network requires pretrained [VGG](https://arxiv.org/abs/1409.1556) networks. Both the trained model of ETNet and pre-trained VGG model can be downloaded through the [Google Drive](). Note that the pre-trained VGG model is used as the encoding layers of our model. Please place all the downloaded models to appropriate directories as shown below.
+- The training of our style transfer network requires pretrained [VGG](https://arxiv.org/abs/1409.1556) networks. Both the trained model of ETNet and pre-trained VGG model can be downloaded through the [Google Drive](https://drive.google.com/file/d/1vqxi63GHIA_eLmXpRo02fknROIrJ4yF4/view?usp=sharing). Note that the pre-trained VGG model is used as the encoding layers of our model. Please place all the downloaded models to appropriate directories as shown below.
 - [Places365](http://places2.csail.mit.edu/download.html) dataset is applied for the content image dataset.
 - [WikiArt](https://www.kaggle.com/c/painter-by-numbers/data) dataset is used as the style image dataset.
 
