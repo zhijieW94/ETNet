@@ -76,17 +76,17 @@ output: # Subdirectories for results
   dir_checkpoint: checkpoints
 ```
 Generally, the `train.yaml` is written in `json` format and contain the following options.
-- `GPU_ID`: a list for GPU ID. We use four GPUs (e.g. [0, 1, 2, 3]) for training by default.
+- `GPU_ID`: a list for GPU ID. We use four GPUs (e.g. [0, 1, 2, 3]) for training the network at third level by default.
 - `Incremental`: the layer index for training, starting from 0.
-- `layers_num`: the total layer count in current network.
-- `weight`: the weight to balance the effect of `content` and `styles` in perceptual loss. When we train the networks at different levels, we assign different values to `style`. For a model with three different levels, we set `styles` as `2`, `5`, `8`  at the training stages for the networks at first, second and third level respectively.
-- `dir_checkpoint`: a path list for pretrained models. Each element in the list is also another list, which aims to indicate the layer index and corresponding model path.
+- `layers_num`: the network count in current model.
+- `weight`: the weight to balance the effect of `content` and `styles` of perceptual loss. When we train the networks at different levels, we assign different values to `style`. For a model with three different levels, we set `styles` as `2`, `5`, `8`  at the training stages for the networks at first, second and third level respectively.
+- `dir_checkpoint`: a path list for pretrained networks. Each element in the list is also another list, which aims to indicate the layer index and corresponding model path.
 - `vgg_weights`: the directory of pretrained VGG models.
 - `data`: the directory to place all the training data. Specifically, `dir_content` and `dir_style` are the two directories to store content and style images correspondingly. They can be `image/input/content` for multiple content images and `image/input/style` for style images.
 - `dir_out`: the root directory for output results. During training, the model would output the initial configuration information and other intermediate information about logs, stylized samples, checkpoints into `dir_config`, `dir_log`, `dir_sample` and `dir_checkpoint`.
 
 
-Please note that, when training networks at different levels, we should update `Incremental`, `layers_num`, `weight` and `dir_checkpoint` correspondingly to adjust the balance between content and style, preserve the same batch size and indicate which network to be trained. For the network at first level, these keys should be set up as:
+Please note that, when training networks at different levels, we should update `Incremental`, `layers_num`, `weight` and `dir_checkpoint` correspondingly to adjust the balance between content and style, preserve the same training batch size and indicate which network to be trained. For the network at first level, these keys should be set up as:
 ```
 GPU_ID: [0]
 
@@ -101,7 +101,7 @@ dir_checkpoint: None
 ```
 But for finetuning this network, the `dir_checkpoint` should be set as:
 ```
-dir_checkpoint: [[0, /model/layer1/checkpoints]] # /model/layer1/checkpoints is path of a pretrained model
+dir_checkpoint: [[0, models/layer1/checkpoints]] # models/layer1/checkpoints is path of a pretrained model
 ```
 For the network at second level, we update the configuration as:
 ```
@@ -114,7 +114,7 @@ weight:
   content: 1.0
   style:  5.0
 
-dir_checkpoint: [[0, /model/layer1/checkpoints]] 
+dir_checkpoint: [[0, models/layer1/checkpoints]]
 ```
 Similarly, we can add another list to the `dir_checkpoint` to include an extra pretrained model for further finetuning.
 
@@ -124,11 +124,11 @@ GPU_ID: [0,1,2,3]
 Incremental: 2 
 layers_num: 3 
 
-weight:  
+weight:
   content: 1.0
   style:  8.0
 
-dir_checkpoint: [[0, /model/layer1/checkpoints],[1, /model/layer2/checkpoints]]
+dir_checkpoint: [[0, models/layer1/checkpoints],[1, models/layer2/checkpoints]]
 ```
 
 After the `train.yaml` has been set well, then we directly run `train.py` to start model training as:
