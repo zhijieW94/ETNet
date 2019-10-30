@@ -2,7 +2,7 @@
 
 This repository contains the code (in [TensorFlow](https://www.tensorflow.org/)) for the paper:
 
-[__ETNet: Error Transition Network for Arbitrary Style Transfer__]()
+[__ETNet: Error Transition Network for Arbitrary Style Transfer__](https://arxiv.org/pdf/1910.12056.pdf)
 <br>
 Chunjin song*, [Zhijie Wu*](https://zhijiew94.github.io/), [Yang Zhou](https://zhouyangvcc.github.io/), [Minglun Gong](http://www.cs.mun.ca/~gong/), [Hui Huang](https://vcc.tech/~huihuang) (* equal contribution, in alphabetic order)
 <br>
@@ -10,7 +10,7 @@ NeurIPS 2019
 
 ## Introduction
 
-This repository contains an official implementation for [ETNet: Error Transition Network for Arbitrary Style Transfer](). To improve the stylization results, we introduce an iterative error-correction mechanism to break the stylization process into multiple refinements with the Laplacian pyramid strategy. Given an insufficiently stylized image in a refinement, we compute what is wrong with the current estimate and then transit the error information to the whole image. The simplicity and motivation lie in the following aspect: the detected errors evaluate the residuals to the ground truth, which thus can guide the refinement effectively. Based on this motivation, ETNet can achieve stylization by presenting more adaptive style patterns and preserving high-level content structure better.
+This repository contains an official implementation for [ETNet: Error Transition Network for Arbitrary Style Transfer](https://arxiv.org/pdf/1910.12056.pdf). To improve the stylization results, we introduce an iterative error-correction mechanism to break the stylization process into multiple refinements with the Laplacian pyramid strategy. Given an insufficiently stylized image in a refinement, we compute what is wrong with the current estimate and then transit the error information to the whole image. The simplicity and motivation lie in the following aspect: the detected errors evaluate the residuals to the ground truth, which thus can guide the refinement effectively. Based on this motivation, ETNet can achieve stylization by presenting more adaptive style patterns and preserving high-level content structure better.
 
 If you have any questions, please feel free to contact Zhijie Wu (wzj.micker@gmail.com).
 
@@ -175,6 +175,14 @@ python stylize.py
 If you use our code/model/data, please cite our paper:
 
 ```
+@misc{song2019etnet,
+    title={ETNet: Error Transition Network for Arbitrary Style Transfer},
+    author={Chunjin Song and Zhijie Wu and Yang Zhou and Minglun Gong and Hui Huang},
+    year={2019},
+    eprint={1910.12056},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
 ```
 
 ## License
