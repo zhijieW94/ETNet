@@ -344,16 +344,6 @@ class ModelNet(object):
             o = o + target
             return o
 
-#get_delta_content_list_old
-    def get_delta_content_list_old(self, img_fake, img_content, img_style):
-        vgg_fake = self.vgg_lastLayer_model(img_fake)
-        vgg_content = self.vgg_lastLayer_model(img_content)
-        gram_content = gram_matrix(vgg_content)
-        gram_fake = gram_matrix(vgg_fake)
-        delta_style = tf.sqrt(gram_fake) - tf.sqrt(gram_content)
-        return vgg_fake - vgg_content, delta_style
-
-# get_delta_content_list_new
     def get_delta_content_list(self, img_fake, img_content, img_style):
         vgg_fake = self.vgg_lastLayer_model(img_fake)
         vgg_content = self.vgg_lastLayer_model(img_content)
