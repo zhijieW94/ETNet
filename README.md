@@ -4,7 +4,7 @@ This repository contains the code (in [TensorFlow](https://www.tensorflow.org/))
 
 [__ETNet: Error Transition Network for Arbitrary Style Transfer__](https://arxiv.org/pdf/1910.12056.pdf)
 <br>
-Chunjin song*, [Zhijie Wu*](https://zhijiew94.github.io/), [Yang Zhou](https://zhouyangvcc.github.io/), [Minglun Gong](http://www.cs.mun.ca/~gong/), [Hui Huang](https://vcc.tech/~huihuang) (* equal contribution, in alphabetic order)
+[Chunjin song*](https://chunjinsong.github.io/), [Zhijie Wu*](https://zhijiew94.github.io/), [Yang Zhou](https://zhouyangvcc.github.io/), [Minglun Gong](http://www.cs.mun.ca/~gong/), [Hui Huang](https://vcc.tech/~huihuang) (* equal contribution, in alphabetic order)
 <br>
 NeurIPS 2019
 
